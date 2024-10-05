@@ -1,4 +1,4 @@
-let computerChoice = getComputerChoice ();
+const computerChoice = getComputerChoice ();
 function getComputerChoice () {
     let randomNumber = Math.random(); 
     if (randomNumber <= (1/3)) {
@@ -24,6 +24,11 @@ function toStandardizeCase () {
     let restOfWord = humanChoice.slice(1).toLowerCase();
     return firstLetter + restOfWord;
 }
+
+
+let humanScore = 0
+let computerScore = 0
+
 
 
 let roundResult = playRound ();
