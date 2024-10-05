@@ -25,11 +25,8 @@ function toStandardizeCase () {
     return firstLetter + restOfWord;
 }
 
-
 let humanScore = 0
 let computerScore = 0
-
-
 
 let roundResult = playRound ();
 function playRound () {
@@ -38,10 +35,13 @@ function playRound () {
     } else if (humanChoiceStandard == "Rock" && computerChoice == "Scissors" || 
         humanChoiceStandard == "Scissors" && computerChoice == "Paper" ||
         humanChoiceStandard == "Paper" && computerChoice == "Rock") {
-        return "win";
+            humanScore + 1
+            return "win";
     } else {
+        computerScore + 1
         return "lose"}
-
 }
+
+
 
 console.log(roundResult)
