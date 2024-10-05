@@ -12,16 +12,25 @@ function getComputerChoice () {
 
 let humanChoice = getHumanChoice ();
 function getHumanChoice () {
-    let response = prompt ("Type Rock, Paper, or Scissors", "no answer")
-    return String(response)
+    let response = prompt ("Rock, Paper, or Scissors", "type your choice")
+    return String(response);
 }
 
 let humanChoiceStandard = toStandardizeCase ();
 function toStandardizeCase () {
     let firstLetter = humanChoice.charAt(0).toUpperCase();
     let restOfWord = humanChoice.slice(1).toLowerCase();
-    return firstLetter + restOfWord
+    return firstLetter + restOfWord;
 }
 
-console.log (humanChoiceStandard)
 
+let roundResult = playRound ();
+function playRound () {
+    if (computerChoice == humanChoiceStandard) {
+        return "tie"
+    } else {return "not tie"}
+       
+
+}
+
+console.log(roundResult)
