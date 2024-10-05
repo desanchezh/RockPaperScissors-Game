@@ -10,6 +10,8 @@ function getComputerChoice () {
     }
 }
 
+console.log(computerChoice)
+
 let humanChoice = getHumanChoice ();
 function getHumanChoice () {
     let response = prompt ("Rock, Paper, or Scissors", "type your choice")
@@ -27,9 +29,13 @@ function toStandardizeCase () {
 let roundResult = playRound ();
 function playRound () {
     if (computerChoice == humanChoiceStandard) {
-        return "tie"
-    } else {return "not tie"}
-       
+        return "tie";
+    } else if (humanChoiceStandard == "Rock" && computerChoice == "Scissors" || 
+        humanChoiceStandard == "Scissors" && computerChoice == "Paper" ||
+        humanChoiceStandard == "Paper" && computerChoice == "Rock") {
+        return "win";
+    } else {
+        return "lose"}
 
 }
 
