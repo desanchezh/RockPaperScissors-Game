@@ -1,4 +1,4 @@
-const computerChoice = getComputerChoice ();
+
 function getComputerChoice () {
     let randomNumber = Math.random(); 
     if (randomNumber <= (1/3)) {
@@ -10,38 +10,45 @@ function getComputerChoice () {
     }
 }
 
-console.log(computerChoice)
 
-let humanChoice = getHumanChoice ();
 function getHumanChoice () {
     let response = prompt ("Rock, Paper, or Scissors", "type your choice")
-    return String(response);
+    function toStandardizeCase (response) {
+        let firstLetter = response.charAt(0).toUpperCase();
+        let restOfWord = response.slice(1).toLowerCase();
+    return firstLetter + restOfWord
+    }
+    return String(toStandardizeCase(response));
 }
 
-let humanChoiceStandard = toStandardizeCase ();
-function toStandardizeCase () {
-    let firstLetter = humanChoice.charAt(0).toUpperCase();
-    let restOfWord = humanChoice.slice(1).toLowerCase();
-    return firstLetter + restOfWord;
-}
+console.log(getHumanChoice())
 
 let humanScore = 0
 let computerScore = 0
 
-let roundResult = playRound ();
+
 function playRound () {
     if (computerChoice == humanChoiceStandard) {
         return "tie";
     } else if (humanChoiceStandard == "Rock" && computerChoice == "Scissors" || 
         humanChoiceStandard == "Scissors" && computerChoice == "Paper" ||
         humanChoiceStandard == "Paper" && computerChoice == "Rock") {
-            humanScore + 1
             return "win";
     } else {
-        computerScore + 1
         return "lose"}
 }
 
+function playGame () {
 
+        playRound ();
+        let roundResult = playRound ();
+        console.log(roundResult)
+        getComputerChoice ()
+        getHumanChoice
+        toStandardizeCase ()
 
-console.log(roundResult)
+    }
+    
+
+console.log(playGame())
+
