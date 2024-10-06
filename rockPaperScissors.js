@@ -10,7 +10,6 @@ function getComputerChoice () {
     }
 }
 
-
 function getHumanChoice () {
     let response = prompt ("Rock, Paper, or Scissors", "type your choice")
     function toStandardizeCase (response) {
@@ -21,34 +20,37 @@ function getHumanChoice () {
     return String(toStandardizeCase(response));
 }
 
-console.log(getHumanChoice())
-
-let humanScore = 0
-let computerScore = 0
-
-
-function playRound () {
-    if (computerChoice == humanChoiceStandard) {
-        return "tie";
-    } else if (humanChoiceStandard == "Rock" && computerChoice == "Scissors" || 
-        humanChoiceStandard == "Scissors" && computerChoice == "Paper" ||
-        humanChoiceStandard == "Paper" && computerChoice == "Rock") {
-            return "win";
-    } else {
-        return "lose"}
-}
-
 function playGame () {
+    let humanScore = 0
+    let computerScore = 0
+    function playRound () {
+        computerChoice = getComputerChoice()
+        humanChoice =  getHumanChoice ()
+        if (computerChoice == humanChoice) {
+            return "tie";
+            
+        } else if (humanChoice == "Rock" && computerChoice == "Scissors" || 
+            humanChoice == "Scissors" && computerChoice == "Paper" ||
+            humanChoice == "Paper" && computerChoice == "Rock") {
+                humanScore++;
+                return "win";
+                
+        } else {
+            computerScore++;
+            return "lose"}
+    }
 
-        playRound ();
-        let roundResult = playRound ();
-        console.log(roundResult)
-        getComputerChoice ()
-        getHumanChoice
-        toStandardizeCase ()
+    console.log(playRound ())
+    console.log(playRound ())
+    console.log(playRound ())
+    console.log(playRound ())
+    console.log(playRound ())
+
+
+    console.log("Player score: " + humanScore)
+    console.log("Computer score: " + computerScore)
 
     }
-    
+
 
 console.log(playGame())
-
