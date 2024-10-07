@@ -40,17 +40,16 @@ function playGame () {
             return "lose"}
     }
 
+    //A loop would be much better here but im not at that level yet. will return.//
     console.log(playRound ())
     console.log(playRound ())
     console.log(playRound ())
     console.log(playRound ())
     console.log(playRound ())
-
 
     console.log("Player score: " + humanScore)
     console.log("Computer score: " + computerScore)
 
     }
-
 
 console.log(playGame())
