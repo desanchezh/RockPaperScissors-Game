@@ -28,7 +28,7 @@ function playGame () {
         computerChoice = getComputerChoice()
         humanChoice =  getHumanChoice ()
         if (computerChoice == humanChoice) {
-            console.log(`It's a tie! You chose ${humanChoice} and the computer chose ${computerChoice}`);
+            console.log(`It's a tie! You both chose ${computerChoice}`);
             return "tie";
 
         } else if (humanChoice == "Rock" && computerChoice == "Scissors" || 
@@ -53,4 +53,4 @@ function playGame () {
 
     }
 
-console.log(playGame())
+playGame()
