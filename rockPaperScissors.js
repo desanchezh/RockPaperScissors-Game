@@ -41,12 +41,10 @@ function playGame () {
     }
 
     //A loop would be much better here but im not at that level yet. will return.//
-    console.log(playRound ())
-    console.log(playRound ())
-    console.log(playRound ())
-    console.log(playRound ())
-    console.log(playRound ())
 
+    for (let i = 0; i < 5; i++) {
+        console.log(playRound ())
+    }
     console.log("Player score: " + humanScore)
     console.log("Computer score: " + computerScore)
 
