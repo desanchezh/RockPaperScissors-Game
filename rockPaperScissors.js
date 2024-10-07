@@ -10,6 +10,7 @@ function getComputerChoice () {
     }
 }
 
+//I realized too late (throwaway project) that I could have just checked the input by applying .toLowerCase to input and computer choice//
 function getHumanChoice () {
     let response = prompt ("Rock, Paper, or Scissors", "type your choice")
     function toStandardizeCase (response) {
@@ -27,24 +28,26 @@ function playGame () {
         computerChoice = getComputerChoice()
         humanChoice =  getHumanChoice ()
         if (computerChoice == humanChoice) {
+            console.log(`It's a tie! You chose ${humanChoice} and the computer chose ${computerChoice}`);
             return "tie";
-            
+
         } else if (humanChoice == "Rock" && computerChoice == "Scissors" || 
             humanChoice == "Scissors" && computerChoice == "Paper" ||
             humanChoice == "Paper" && computerChoice == "Rock") {
                 humanScore++;
+                console.log(`You win! You chose ${humanChoice} and the computer chose ${computerChoice}`);
                 return "win";
                 
         } else {
             computerScore++;
+            console.log(`You lose. You chose ${humanChoice} and the computer chose ${computerChoice}`);
             return "lose"}
     }
 
-    //A loop would be much better here but im not at that level yet. will return.//
-
     for (let i = 0; i < 5; i++) {
-        console.log(playRound ())
+        playRound ()
     }
+
     console.log("Player score: " + humanScore)
     console.log("Computer score: " + computerScore)
 
