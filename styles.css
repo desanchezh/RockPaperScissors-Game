@@ -2,9 +2,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height:fit-content;
     flex-direction: column;
-    padding-top: 100px;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: darkslategrey;
 }
 
 img {
@@ -16,11 +18,32 @@ img {
     opacity: 1;
 }
 
+#rockButton {
+    padding-top: 34px;
+}
+
 img:hover {
     opacity: 0.5;
 }
 
 button {
     border-color: white;
-    background-color:darkslateblue;
+    background-color:darkslategray;
+}
+
+#score {
+    display: flex;
+    justify-content: space-around;
+    min-width: 430.58px;
+    color: whitesmoke;
+}
+
+#result {
+    background-color: darkslategrey;
+    color: whitesmoke;
+    min-width: 430.58px;
+    display: flex;
+    justify-content: center;
+    font-size:x-large;
+
 }

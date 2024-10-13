@@ -16,6 +16,7 @@ let rockButton = document.querySelector("#rockButton");
 rockButton.addEventListener("click", () => {
     humanChoice = "Rock"
     playRound()
+    //create a function that shows user selection and computer selection image//
 })
 let paperButton = document.querySelector("#paperButton");
 paperButton.addEventListener("click", () => {
@@ -30,9 +31,16 @@ scissorsButton.addEventListener("click", () => {
 
 let humanScore = 0;
 let computerScore = 0;
-let score = document.querySelector("#score");
-let currentScore = document.createElement("span");
-score.appendChild(currentScore);
+
+let scoreUser = document.querySelector("#scoreUser");
+let currentScoreUser = document.createElement("span")
+scoreUser.appendChild(currentScoreUser)
+currentScoreUser.textContent = `Your score: ${humanScore}`;
+
+let scoreComputer = document.querySelector("#scoreComputer");
+let currentScoreComputer = document.createElement("span")
+scoreComputer.appendChild(currentScoreComputer)
+currentScoreComputer.textContent = `Computer score: ${computerScore}`;
 
 let result = document.querySelector("#result");
 let message = document.createElement("span");
@@ -44,8 +52,10 @@ function playRound () {
     if (computerChoice == humanChoice) {
         message.textContent = "";
         message.textContent = `It's a tie! You both chose ${computerChoice}`;
-        currentScore.textContent = "";
-        currentScore.textContent = `Your score: ${humanScore} | Computer score: ${computerScore}`;
+        currentScoreUser.textContent = "";
+        currentScoreComputer.textContent = "";
+        currentScoreUser.textContent = `Your score: ${humanScore}`;
+        currentScoreComputer.textContent = `Computer score: ${computerScore}`;
         return "tie";
     } else if (humanChoice == "Rock" && computerChoice == "Scissors" || 
         humanChoice == "Scissors" && computerChoice == "Paper" ||
@@ -53,15 +63,20 @@ function playRound () {
             humanScore++;
             message.textContent = "";
             message.textContent = `You win! You chose ${humanChoice} and the computer chose ${computerChoice}`
-            currentScore.textContent = "";
-            currentScore.textContent = `Your score: ${humanScore} | Computer score: ${computerScore}`;
+            currentScoreUser.textContent = "";
+            currentScoreComputer.textContent = "";
+            currentScoreUser.textContent = `Your score: ${humanScore}`;
+            currentScoreComputer.textContent = `Computer score: ${computerScore}`;
             return "win";
         } else {
             computerScore++;
             message.textContent = "";
             message.textContent = `You lose. You chose ${humanChoice} and the computer chose ${computerChoice}`;
             currentScore.textContent = "";
-            currentScore.textContent = `Your score: ${humanScore} | Computer score: ${computerScore}`;
+            currentScoreUser.textContent = "";
+            currentScoreComputer.textContent = "";
+            currentScoreUser.textContent = `Your score: ${humanScore}`;
+            currentScoreComputer.textContent = `Computer score: ${computerScore}`;
             return "lose"}
     }
 
