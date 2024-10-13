@@ -6,3 +6,16 @@ body {
     flex-direction: column;
     padding-top: 100px;
 }
+
+img {
+    display: block;
+    max-width:150px;
+    max-height:150px;
+    width: auto;
+    height: auto;
+}
+
+button {
+    border-color: white;
+    background-color:darkslateblue;
+}
