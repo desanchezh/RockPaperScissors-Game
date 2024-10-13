@@ -1,0 +1,8 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height:fit-content;
+    flex-direction: column;
+    padding-top: 100px;
+}
