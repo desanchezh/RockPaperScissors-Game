@@ -34,8 +34,10 @@ button {
 #score {
     display: flex;
     justify-content: space-around;
-    min-width: 430.58px;
+    min-width: 500px;
     color: whitesmoke;
+    min-height: 200px;
+    align-items: center;
 }
 
 #result {
@@ -45,5 +47,12 @@ button {
     display: flex;
     justify-content: center;
     font-size:x-large;
+}
+
+#roundVisualizer {
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }

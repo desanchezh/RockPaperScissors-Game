@@ -14,20 +14,31 @@ let humanChoice = ""
 
 let rockButton = document.querySelector("#rockButton");
 rockButton.addEventListener("click", () => {
-    humanChoice = "Rock";
+    humanChoice = "Rock";``
     playRound();
+    roundVisualizerHuman();
     //create a function that shows user selection and computer selection image
 })
 let paperButton = document.querySelector("#paperButton");
 paperButton.addEventListener("click", () => {
     humanChoice = "Paper";
     playRound();
+    roundVisualizerHuman();
 })
 let scissorsButton = document.querySelector("#scissorsButton");
 scissorsButton.addEventListener("click", () => {
     humanChoice = "Scissors";
     playRound();
+    roundVisualizerHuman();
 })
+
+let visualizerContainer = document.querySelector("#roundVisualizer");
+let humanImg = document.createElement("img");
+let computerImg = document.createElement("img");
+computerImg.src = "/Users/Daniel/repos/RockPaperScissors-Game/images/placeholder.png";
+humanImg.src = "/Users/Daniel/repos/RockPaperScissors-Game/images/placeholder.png";
+visualizerContainer.appendChild(humanImg);
+visualizerContainer.appendChild(computerImg);
 
 let humanScore = 0;
 let computerScore = 0;
@@ -62,7 +73,23 @@ function playRound () {
         }
     currentScoreUser.textContent = `Your score: ${humanScore}`;
     currentScoreComputer.textContent = `Computer score: ${computerScore}`;
+    roundVisualizerComputer(computerChoice);
     }
 
-
     //needs a hard cutoff after 5 rounds (reset button or reload page)//
+
+function roundVisualizerHuman () {
+    if (humanChoice == "Rock") {
+        humanImg.src = "/Users/Daniel/repos/RockPaperScissors-Game/images/rock.png"
+    } else if (humanChoice == "Paper") {
+        humanImg.src = "/Users/Daniel/repos/RockPaperScissors-Game/images/paper.png"
+    } else {humanImg.src = "/Users/Daniel/repos/RockPaperScissors-Game/images/scissors.png"}
+}
+
+function roundVisualizerComputer (computerChoice) {
+    if (computerChoice == "Rock") {
+        computerImg.src = "/Users/Daniel/repos/RockPaperScissors-Game/images/rock.png"
+    } else if (computerChoice == "Paper") {
+        computerImg.src = "/Users/Daniel/repos/RockPaperScissors-Game/images/paper.png"
+    } else {computerImg.src = "/Users/Daniel/repos/RockPaperScissors-Game/images/scissors.png"}
+}
