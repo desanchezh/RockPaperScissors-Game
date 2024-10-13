@@ -51,6 +51,7 @@ button {
     background-color: darkslategrey;
     color: whitesmoke;
     min-width: 430.58px;
+    min-height: 50px;
     display: flex;
     justify-content: center;
     font-size:x-large;

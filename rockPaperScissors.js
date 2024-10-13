@@ -17,7 +17,6 @@ rockButton.addEventListener("click", () => {
     humanChoice = "Rock";``
     playRound();
     roundVisualizerHuman();
-    //create a function that shows user selection and computer selection image
 })
 let paperButton = document.querySelector("#paperButton");
 paperButton.addEventListener("click", () => {
@@ -35,8 +34,8 @@ scissorsButton.addEventListener("click", () => {
 let visualizerContainer = document.querySelector("#roundVisualizer");
 let humanImg = document.createElement("img");
 let computerImg = document.createElement("img");
-computerImg.src = "/Users/Daniel/repos/RockPaperScissors-Game/images/placeholder.png";
-humanImg.src = "/Users/Daniel/repos/RockPaperScissors-Game/images/placeholder.png";
+computerImg.src = "images/placeholder.png";
+humanImg.src = "images/placeholder.png";
 visualizerContainer.appendChild(humanImg);
 visualizerContainer.appendChild(computerImg);
 
@@ -61,15 +60,18 @@ message.textContent = "make your choice."
 function playRound () {
     let computerChoice = getComputerChoice();
     if (computerChoice == humanChoice) {
-        message.textContent = `It's a tie! You both chose ${computerChoice}`;
+        message.textContent = `It's a tie!
+        You both chose ${computerChoice}`;
     } else if (humanChoice == "Rock" && computerChoice == "Scissors" || 
         humanChoice == "Scissors" && computerChoice == "Paper" ||
         humanChoice == "Paper" && computerChoice == "Rock") {
             humanScore++;
-            message.textContent = `You win! You chose ${humanChoice} and the computer chose ${computerChoice}`
+            message.textContent = `You win!
+            You chose ${humanChoice} and the computer chose ${computerChoice}`
         } else {
             computerScore++;
-            message.textContent = `You lose. You chose ${humanChoice} and the computer chose ${computerChoice}`;
+            message.textContent = `You lose.
+            You chose ${humanChoice} and the computer chose ${computerChoice}`;
         }
     currentScoreUser.textContent = `Your score: ${humanScore}`;
     currentScoreComputer.textContent = `Computer score: ${computerScore}`;
@@ -80,16 +82,16 @@ function playRound () {
 
 function roundVisualizerHuman () {
     if (humanChoice == "Rock") {
-        humanImg.src = "/Users/Daniel/repos/RockPaperScissors-Game/images/rock.png"
+        humanImg.src = "images/rock.png"
     } else if (humanChoice == "Paper") {
-        humanImg.src = "/Users/Daniel/repos/RockPaperScissors-Game/images/paper.png"
-    } else {humanImg.src = "/Users/Daniel/repos/RockPaperScissors-Game/images/scissors.png"}
+        humanImg.src = "images/paper.png"
+    } else {humanImg.src = "images/scissors.png"}
 }
 
 function roundVisualizerComputer (computerChoice) {
     if (computerChoice == "Rock") {
-        computerImg.src = "/Users/Daniel/repos/RockPaperScissors-Game/images/rock.png"
+        computerImg.src = "images/rock.png"
     } else if (computerChoice == "Paper") {
-        computerImg.src = "/Users/Daniel/repos/RockPaperScissors-Game/images/paper.png"
-    } else {computerImg.src = "/Users/Daniel/repos/RockPaperScissors-Game/images/scissors.png"}
+        computerImg.src = "images/paper.png"
+    } else {computerImg.src = "images/scissors.png"}
 }
