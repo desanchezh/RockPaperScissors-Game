@@ -26,8 +26,15 @@ img:hover {
     opacity: 0.5;
 }
 
+#buttons {
+    border-color: antiquewhite;
+    background-color: darkslategray;
+    display: flex;
+    justify-content: center;
+}
+
 button {
-    border-color: white;
+    border-color: antiquewhite;
     background-color:darkslategray;
 }
 
